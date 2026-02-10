@@ -1,4 +1,4 @@
-Put your HTML text here<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -84,8 +84,16 @@ Put your HTML text here<!DOCTYPE html>
       margin: auto;
     }
 
-    .hero button {
+    .hero-buttons {
       margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
       padding: 12px 24px;
       border: none;
       border-radius: 999px;
@@ -94,6 +102,13 @@ Put your HTML text here<!DOCTYPE html>
       font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .hero-buttons a:hover,
+    .hero-buttons button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
     .hero button:hover {
@@ -183,7 +198,6 @@ Put your HTML text here<!DOCTYPE html>
       <div class="logo">Muhammad Reinaldy Hermawan</div>
       <div class="nav-links">
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -193,9 +207,12 @@ Put your HTML text here<!DOCTYPE html>
   <section class="hero container">
     <h1>Hi, I'm Muhammad Reinaldy Hermawan 👋</h1>
     <p>
-      Android Engineer specializing in Kotlin, Jetpack Compose, and Flutter. I build scalable mobile apps with strong architecture, fintech integrations, and high‑traffic enterprise use cases.
+      Software Engineer specializing in mobile application development with 3+ years of experience building and maintaining production-scale Android and Flutter applications. Proficient in Kotlin (XML & Jetpack Compose) and Flutter, with experience delivering secure, high-traffic apps in fintech, banking, transportation, and enterprise environments. Experienced in implementing complex features, collaborating in cross-functional teams, and contributing to scalable mobile architectures such as Server-Driven UI.
     </p>
-    <button onclick="location.href='#projects'">View My Work</button>
+    <div class="hero-buttons">
+      <button onclick="location.href='#projects'">View My Work</button>
+      <a href="assets/CV_25012026.pdf" download>Download CV</a>
+    </div>
   </section>
 
   <!-- Projects -->
@@ -297,16 +314,6 @@ Put your HTML text here<!DOCTYPE html>
 
       </div>
 
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p class="about">
-        I'm a developer passionate about building useful digital products. I have experience working with Android (Kotlin/Java), Flutter, and backend integrations including APIs and NFC technologies.
-      </p>
     </div>
   </section>
 
