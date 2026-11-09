@@ -186,6 +186,7 @@
     .section-desc { color: var(--muted); margin-top: 8px; max-width: 640px; }
 
     /* ---------- Featured ---------- */
+    .feature-wide { grid-column: 1 / -1; }
     .featured-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .feature-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 26px;
@@ -222,15 +223,6 @@
     .text-link small { font-weight: 500; color: var(--muted); }
 
     /* ---------- Minor project row ---------- */
-    .minor {
-      margin-top: 20px; display: flex; gap: 18px; align-items: flex-start;
-      background: var(--surface); border: 1px dashed var(--border); border-radius: 20px; padding: 22px 26px;
-    }
-    .minor .app-icon { width: 48px; height: 48px; border-radius: 12px; }
-    .minor-title { font-weight: 700; color: var(--text-strong); }
-    .minor-title span { font-weight: 500; color: var(--muted); font-size: 14px; }
-    .minor p { font-size: 14px; color: var(--muted); margin-top: 4px; }
-    .minor p strong { color: var(--text); font-weight: 600; }
 
     /* ---------- More apps ---------- */
     .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
@@ -318,7 +310,6 @@
       .feature-card { padding: 20px; }
       .skills-grid, .edu-grid { grid-template-columns: 1fr; }
       .apps-grid { grid-template-columns: 1fr; }
-      .minor { flex-direction: column; padding: 20px; }
       .contact-card { padding: 36px 20px; }
       .stat-value { font-size: 24px; }
       .logo-name { display: none; }
@@ -392,8 +383,8 @@
     <section id="work">
       <div class="container">
         <div class="section-head reveal">
-          <div class="section-kicker">// featured work</div>
-          <h2 class="section-title">Recent projects</h2>
+          <div class="section-kicker">// highlighted works</div>
+          <h2 class="section-title">Highlighted works</h2>
           <p class="section-desc">Selected work across video streaming, Android TV and mobile banking, from national-scale OTT to secure banking apps.</p>
         </div>
 
@@ -512,20 +503,35 @@
             </div>
           </article>
 
+          <!-- MyMRTJ -->
+          <article class="feature-card feature-wide reveal">
+            <div class="feature-top">
+              <img class="app-icon" src="assets/mrtj.webp" alt="MyMRTJ app icon" width="60" height="60" loading="lazy">
+              <div>
+                <h3 class="feature-title">MyMRTJ</h3>
+                <div class="feature-client">MRT Jakarta · Commuter App</div>
+              </div>
+            </div>
+            <div class="meta-row">
+              <span class="badge">Android Engineer</span>
+              <span class="badge badge-muted">Feb 2023 – Jun 2023</span>
+            </div>
+            <p class="feature-summary">Jakarta MRT's official commuter app for QR tickets, station info, MRT points, lifestyle promos and payments with MartiPay, GoPay, Dana and more.</p>
+            <ul class="feature-points">
+              <li><strong>Integrated e-wallet binding and balances</strong></li>
+              <li><strong>Built the content-driven home screen</strong></li>
+              <li><strong>Built ticketing flows and the new registration flow</strong></li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Kotlin</span><span class="chip">Android XML</span><span class="chip">Firebase</span><span class="chip">E-wallet SDKs</span>
+            </div>
+            <div class="links">
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.mrt.jakarta" target="_blank" rel="noopener">Play Store <small>1M+ downloads</small> →</a>
+            </div>
+          </article>
+
         </div>
 
-        <!-- IndiHome IPTV (minor) -->
-        <div class="minor reveal">
-          <img class="app-icon" src="assets/indihome-tvms.png" alt="IndiHome TV messaging icon" width="48" height="48" loading="lazy">
-          <div>
-            <div class="minor-title">IndiHome IPTV set-top box apps <span>· Telkomsel · Maintainer · Aug 2026 – Present</span></div>
-            <p>
-              I maintain two Android apps that run on IndiHome set-top boxes.
-              <strong>TVMS</strong> is a messaging inbox with a scrolling text overlay on screen, receiving messages in real time over MQTT. I improved reconnection, added unread badges and inbox pagination, and wrote its documentation.
-              <strong>AdBreakReceiver</strong> is an SDK that receives real-time ad break signals for live TV channels. I fixed reconnection when the network comes back and documented the SDK.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -546,13 +552,13 @@
         </div>
 
         <div class="apps-grid">
-          <article class="app-card" data-tech="xml">
-            <img class="app-icon" src="assets/mrtj.webp" alt="MyMRTJ app icon" width="48" height="48" loading="lazy">
+          <article class="app-card" data-tech="compose">
+            <img class="app-icon" src="assets/indihome-tvms.png" alt="IndiHome TV messaging icon" width="48" height="48" loading="lazy">
             <div>
-              <h3 class="app-name">MyMRTJ</h3>
-              <p class="app-desc">Jakarta MRT's official commuter app: QR tickets, station info, MRT points, lifestyle promos and payments with MartiPay, GoPay, Dana and more.</p>
-              <p class="app-role">I built e-wallet binding and balances (Dana, i-Saku, OVO), the content-driven home with banners and promos, ticketing flows and the new registration flow.</p>
-              <div class="app-foot"><span class="badge badge-muted">Feb – Jun 2023</span><span class="chip">Android XML</span><a class="text-link" href="https://play.google.com/store/apps/details?id=com.mrt.jakarta" target="_blank" rel="noopener">Play Store →</a></div>
+              <h3 class="app-name">IndiHome IPTV apps</h3>
+              <p class="app-desc">Telkomsel's set-top box apps: TVMS, a messaging inbox with on-screen scrolling text delivered in real time over MQTT, and AdBreakReceiver, an SDK for live TV ad breaks.</p>
+              <p class="app-role">I maintain both apps: reconnection reliability, unread badges, inbox pagination and documentation.</p>
+              <div class="app-foot"><span class="badge badge-muted">Aug 2026 – Present</span><span class="chip">Compose for TV</span></div>
             </div>
           </article>
 
